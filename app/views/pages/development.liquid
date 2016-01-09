@@ -1,0 +1,45 @@
+---
+title: Development
+
+# true if the page is included in the menu
+listed: true
+# true if the page is published
+published: true
+
+# true if the page can be used as a layout for new pages created by the editors
+# is_layout: true
+
+# position among sibling pages
+# position: 1
+
+# sets a redirection to the given url (301)
+# redirect_url: "<url to a page or to a remote url>"
+
+# content type that this page is templatizing
+# content_type: "<slug of one of the content types>"
+
+# editable_elements:
+#   'some_block/some_slug': "<text>"
+#   'some_block/some_slug': "<relative path to the file under the public/samples folder>"
+---
+{% extends parent %}
+
+{% block main %}
+  <section>
+    <h1>How can we help you?</h1>
+    <p>Your goals and needs are unique, we work with you to try to understand these needs and bring in the appropriate resources to help you attain your goals.</p>
+    <ul class="inline">
+      <li><a href="">Development</a></li>
+      <li><a href="">Design</a></li>
+      <li><a href="">Discovery</a></li>
+    </ul>
+    <div class="skill">
+      <h3>Web Application Development</h3>
+      <p>Ruby, Python, Javascript, PHP... every project requires the right tool. Bright Black will work with you to focus on sane technology solutions to your business problems. We use TDD and Continous deployment when possible to ensure your code is solid.</p>
+    </div>
+    <div class="skill">
+      <h3>Software Architecture</h3>
+      <p>Facing a challenging architecture issue? We undestand the difficulties associated with scaling a code base and are here to help you get that tangled mess of code under control.</p>
+    </div>
+  </section>
+{% endblock %}

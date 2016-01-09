@@ -31,43 +31,72 @@ published: true
     <![endif]-->
   </head>
   <body>
-   <div class="row">
-      <div class="large-12 columns">
-        <h1>{{ page.title }}</h1>
-      </div>
-    </div>
-    {% nav "site", no_wrapper: true, active_class: "active" %}
+    <nav class="top-bar" data-topbar role="navigation">
+      <ul class="title-area">
+        <li class="name">
+          <h1><a href="/">Bright Black</a></h1>
+        </li>
+         <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+      </ul>
+
+      <section class="top-bar-section">
+        <!-- Right Nav Section -->
+        <ul class="right">
+          {% nav "site", no_wrapper: true, active_class: "active" %}
+        </ul>
+
+      </section>
+    </nav>
+
     {% block 'main' %}
-        <section class='hero'>
-          <h1>Helping you improve your businees using Design, Development and Growth goals!</h1>
-          <p>We help you understand, design and build simple appropriate technology solutions.</p>
-        </section>
+
         <section class='row expanded'>
-          <h1>Who are we?</h1>
-          <p>We are a team of developers and designers who care about moving web presences forward.</p>
+          <div class="large-12 columns">
+            <h1>Helping you improve your businees using Design, Development and Growth goals!</h1>
+            <p>We help you understand, design and build simple appropriate technology solutions.</p>
+          </section>
+          <section class='row expanded'>
+            <div class="large-12 columns">
+              <h1>Who are we?</h1>
+              <p>We are a team of developers and designers who care about moving web presences forward.</p>
 
-          <ul class="inline">
-            <li><a href="/team">Meet our team</a></li>
-          </ul>
+              <ul class="inline-list">
+                <li><a href="/team">Meet our team</a></li>
+              </ul>
+            </div>
+          </div>
         </section>
         <section class='expanded row'>
-          <h1>What have we done?</h1>
-          <p>We have experience working with large and small companies supporting new project and growing existing offering. We also run some products of our own.</p>
+          <div class="large-12 columns">
+            <h1>What have we done?</h1>
+            <p>We have experience working with large and small companies supporting new project and growing existing offering. We also run some products of our own.</p>
 
-          <ul class="inline">
-            <li><a href="/work">Client Work</a></li>
-            <li><a href="/products">Our products</a></li>
-          </ul>
+            <ul class="inline-list">
+              <li><a href="/work">Client Work</a></li>
+              <li><a href="/products">Our products</a></li>
+            </ul>
+          </div>
         </section>
         <section class='expanded row'>
-          <h1>How can we help you?</h1>
-          <p>Your goals and needs are unique, we work with you to try to understand these needs and bring in the appropriate resources to help you attain your goals.</p>
-          <ul class="inline">
-            <li><a href="/development">Development</a></li>
-            <li><a href="/design">Design</a></li>
-          </ul>
+          <div class="large-12 columns">
+            <h1>How can we help you?</h1>
+            <p>Your goals and needs are unique, we work with you to try to understand these needs and bring in the appropriate resources to help you attain your goals.</p>
+            <ul class="inline-list">
+              <li><a href="/development">Development</a></li>
+              <li><a href="/design">Design</a></li>
+            </ul>
+          </div>
         </section>
     {% endblock %}
+    <footer class='expanded row'>
+      <div class="large-12 columns">
+        <h1>Bright Black</h1>
+
+        {% nav "site", active_class: "active" %}
+    </div>
+    </footer>
+
     {{ 'vendor/jquery.min.js' | javascript_tag }}
     {{ 'foundation.min.js' | javascript_tag }}
     <!--

@@ -1,0 +1,50 @@
+---
+title: Design
+
+# true if the page is included in the menu
+listed: true
+# true if the page is published
+published: true
+
+# true if the page can be used as a layout for new pages created by the editors
+# is_layout: true
+
+# position among sibling pages
+# position: 1
+
+# sets a redirection to the given url (301)
+# redirect_url: "<url to a page or to a remote url>"
+
+# content type that this page is templatizing
+# content_type: "<slug of one of the content types>"
+
+# editable_elements:
+#   'some_block/some_slug': "<text>"
+#   'some_block/some_slug': "<relative path to the file under the public/samples folder>"
+---
+{% extends parent %}
+
+{% block main %}
+  <section>
+    <h1>Designing solutions and brands.</h1>
+    <p>A users notion of a digital product begins with the interface. Ensuring that you are making a task as simple as possible is hard. You need a team of designers who understand your domain and spend the time to ensure their designs actually work. Bright Black devotes time to discovery and talks to you and your users throught our design process.</p>
+
+    <div class="skill">
+      <h3>Responsive Design</h3>
+      <p>The web is everywhere, make sure your website is capable of being in all these places. We work in responsive design because we believe the best device is the one your user is on.</p>
+    </div>
+    <div class="skill">
+      <h3>Design Thinking</h3>
+      <p>Some times you need to look at a problem through a new lens, we can help you better understand the issues you are facing, brainstorm solutions and prototype, test, rinse and repeat.</p>
+    </div>
+    <div class="skill">
+      <h3>Branding</h3>
+      <p>We have experience branding some of the biggest companies in the world. Our lead designer comes from a rich branding background and we can help you understand how your brand should look.</p>
+    </div>
+    <div class="skill">
+      <h3>UI Design</h3>
+      <p>If no one wants to use your application then you have bigger problems then technology can solve. Bright Black will work with you to understand how users currently use your product and how it can improve.</p>
+    </div>
+
+  </section>
+{% endblock %}

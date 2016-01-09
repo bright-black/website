@@ -1,0 +1,36 @@
+---
+title: Products
+
+# true if the page is included in the menu
+listed: true
+# true if the page is published
+published: true
+
+# true if the page can be used as a layout for new pages created by the editors
+# is_layout: true
+
+# position among sibling pages
+# position: 1
+
+# sets a redirection to the given url (301)
+# redirect_url: "<url to a page or to a remote url>"
+
+# content type that this page is templatizing
+# content_type: "<slug of one of the content types>"
+
+# editable_elements:
+#   'some_block/some_slug': "<text>"
+#   'some_block/some_slug': "<relative path to the file under the public/samples folder>"
+---
+{% extends parent %}
+
+{% block main %}
+  <section>
+    <h1>Our Products</h1>
+    <p>We are more than just an agency. We are designers at heart, that is why we develop products in house that we feel need to exist.</p>
+  </section>
+  <section>
+    <h1><a href="www.analogforest.com">Analog Forest</a></h1>
+    <p>Analog Forest is an in house product for Bright Black. We developed a new company to help designers anywhere design fitness clothing and then we manufacture, market and sell the products. Each item sold provides a kickback to the designer.</p>
+  </section>
+{% endblock %}
