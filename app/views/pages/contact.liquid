@@ -1,0 +1,84 @@
+---
+title: Contact
+
+# divue if the page is included in the menu
+listed: divue
+# divue if the page is published
+published: divue
+
+# divue if the page can be used as a layout for new pages created by the editors
+# is_layout: divue
+
+# position among sibling pages
+# position: 1
+
+# sets a redirection to the given url (301)
+# redirect_url: "<url to a page or to a remote url>"
+
+# content type that this page is templatizing
+# content_type: "<slug of one of the content types>"
+
+# editable_elements:
+#   'some_block/some_slug': "<text>"
+#   'some_block/some_slug': "<relative path to the file under the public/samples folder>"
+---
+{% extends parent %}
+
+{% block main %}
+
+  <section class='expanded panel hero'>
+  <form method="POST" action="{{contents.customer_messages.public_submission_url}}">
+    {% csrf_param %}
+    <input type="hidden" value="/" name="success_callback" />
+    <input type="hidden" value="/contact" name="error_callback" />
+
+    {% if customer_message.errors %}
+      <p>The following errors occured:</p>
+      <ul>
+      {% for error in customer_message.errors %}
+        <li>{{error[0] | capitalize}} -  {{error[1]}}</li>
+      {% endfor %}
+      </ul>
+    {% endif %}
+    <h2 class='row'>Say Hello!</h2>
+    <div class='row'>
+      <label>Name:
+        <input type="text" name="content[name]" value="{{customer_message.name}}">
+      </label>
+    </div>
+    <div class='row'>
+      <label>Email:
+        <input type="text" name="content[email]" value="{{customer_message.email}}">
+    </label>
+    </div>
+    <div class='row'>
+      <label>Phone:
+        <input type="text" name="content[phone]" value="{{customer_message.phone}}">
+      </label>
+    </div>
+    <div class='row'>
+      <label>Company:
+        <input type="text" name="content[company]" value="{{customer_message.company}}">
+      </label>
+    </div>
+    <div class='row'>
+      <label>Reason You Are Contacting Us:
+          <select id="reason" name="content[reason]">
+            <option value="Just saying hi">Just saying hello</option>
+            <option value="Requesting a proposal">Requesting a proposal</option>
+            <option value="Job opportunities">Job Opportunities</option>
+            <option value="Sales">Selling us something</option>
+        </select>
+      </label>
+    </div>
+    <div class='row'>
+      <label>Message:
+        <textarea name="content[message]">{{customer_message.message}}</textarea>
+      </label>
+    </div>
+    <div class="row">
+      <input type="submit" class='button'>
+    </div>
+  </form>
+  </section>
+{% endblock %}
