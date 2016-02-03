@@ -25,21 +25,37 @@ published: true
 {% extends parent %}
 
 {% block main %}
-  <section>
-    <h1>How can we help you?</h1>
-    <p>Your goals and needs are unique, we work with you to try to understand these needs and bring in the appropriate resources to help you attain your goals.</p>
-    <ul class="inline">
-      <li><a href="">Development</a></li>
-      <li><a href="">Design</a></li>
-      <li><a href="">Discovery</a></li>
-    </ul>
-    <div class="skill">
-      <h3>Web Application Development</h3>
-      <p>Ruby, Python, Javascript, PHP... every project requires the right tool. Bright Black will work with you to focus on sane technology solutions to your business problems. We use TDD and Continous deployment when possible to ensure your code is solid.</p>
+<section>
+    <div class="row expanded hero">
+      <div class="large-12 columns center">
+        {% editable_text "development_intro", rows: 20 %}
+          <h1>How can we help you?</h1>
+          <p>Your goals and needs are unique, we work with you to try to understand these needs and bring in the appropriate resources to help you attain your goals.</p>
+          <ul class="inline center">
+            <li><a href="">Development</a> //</li>
+            <li><a href="">Design</a> //</li>
+            <li><a href="">Discovery</a></li>
+          </ul>
+        {% endeditable_text %}
+      </div>
     </div>
-    <div class="skill">
-      <h3>Software Architecture</h3>
-      <p>Facing a challenging architecture issue? We undestand the difficulties associated with scaling a code base and are here to help you get that tangled mess of code under control.</p>
+    <div class="row expanded hero">
+      <div class="large-12 columns center">
+        {% editable_text "development_offerings", rows: 20 %}
+        <h3>Web Application Development</h3>
+        <p>Ruby, Python, Javascript, PHP... every project requires the right tool. Bright Black will work with you to focus on sane technology solutions to your business problems. We use TDD and Continous deployment when possible to ensure your code is solid.</p>
+        {% endeditable_text %}
+      </div>
+    </div>
+
+    <div class="row expanded hero">
+      <div class="large-12 columns center">
+
+        {% editable_text "development_architecture", rows: 20 %}
+        <h3>Software Architecture</h3>
+        <p>Facing a challenging architecture issue? We undestand the difficulties associated with scaling a code base and are here to help you get that tangled mess of code under control.</p>
+        {% endeditable_text %}
+      </div>
     </div>
   </section>
 {% endblock %}

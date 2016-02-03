@@ -25,7 +25,30 @@ published: true
 {% extends parent %}
 
 {% block main %}
+<section>
+  <div class="row expanded hero">
+    <div class="large-12 columns center">
+      {% editable_text 'work_intro', rows: 20 %}
+        <h1>Our Selected Work</h1>
+      {% endeditable_text %}
+    </div>
+    <div class="row expanded hero">
+      {% for post in contents.work %}
+        <div class="large-12 columns center">
+          {% if post.featured_image.url %}
+          <a href="/work/{{ post._slug }}">
+            <img src="{{ post.featured_image.url | resize: '400x200#' }}" alt="{{ post.title | escape }}"></a>
+        	{% endif %}
+          <h2><a href="/work/{{ post._slug }}">{{ post.title }}</a></h2>
 
-  <p>Hello world</p>
+          <div class="teaster">
+            {{ post.teaser }}
+          </div>
+          <a href="/work/{{ post._slug }}">Read More</a>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
 
 {% endblock %}

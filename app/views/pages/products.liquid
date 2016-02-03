@@ -26,11 +26,21 @@ published: true
 
 {% block main %}
   <section>
-    <h1>Our Products</h1>
-    <p>We are more than just an agency. We are designers at heart, that is why we develop products in house that we feel need to exist.</p>
-  </section>
-  <section>
-    <h1><a href="www.analogforest.com">Analog Forest</a></h1>
-    <p>Analog Forest is an in house product for Bright Black. We developed a new company to help designers anywhere design fitness clothing and then we manufacture, market and sell the products. Each item sold provides a kickback to the designer.</p>
+    <div class="row expanded hero">
+      <div class="large-12 columns center">
+        {% editable_text "products", rows: 20 %}
+          <h1>Our Products</h1>
+          <p>We are more than just an agency. We love the internet and believe in producing great products online. This gives us a unique ability to understand more then just the code behind a site, we understand how to think like a business and how to come up with creative solutions to your problems.</p>
+        {% endeditable_text %}
+      </div>
+    </div>
+    <div class="row expanded hero">
+      <div class="large-12 columns center">
+        {% editable_text "products_af", rows: 20 %}
+          <h1><a href="www.analogforest.com">Analog Forest</a></h1>
+          <p>Analog Forest is an in house product for Bright Black. We developed a new company to help designers anywhere design fitness clothing and then we manufacture, market and sell the products. Each item sold provides a kickback to the designer.</p>
+        {% endeditable_text %}
+      </div>
+    </div>
   </section>
 {% endblock %}
