@@ -1,0 +1,46 @@
+{% raw %}
+<!-- To use your snippet, just add the following code in your page template-->
+<!-- {% include contact_form %} -->
+{% endraw %}
+  <form method="POST" action="{{contents.customer_messages.public_submission_url}}">
+    {% csrf_param %}
+    <input type="hidden" value="/" name="success_callback" />
+    <input type="hidden" value="/contact" name="error_callback" />
+
+    {% if customer_message.errors %}
+      <p>The following errors occured:</p>
+      <ul>
+      {% for error in customer_message.errors %}
+        <li>{{error[0] | capitalize}} -  {{error[1]}}</li>
+      {% endfor %}
+      </ul>
+    {% endif %}
+    <h2 class='large-3 column large-offset-1'>Say Hello!</h2>
+    <div class='large-2 column'>
+      <label>Name:
+        <input type="text" name="content[name]" value="{{customer_message.name}}">
+      </label>
+      <label>Email:
+        <input type="text" name="content[email]" value="{{customer_message.email}}">
+      </label>
+      <label>Phone:
+        <input type="text" name="content[phone]" value="{{customer_message.phone}}">
+      </label>
+      <label>Website:
+        <input type="text" name="content[website]" value="{{customer_message.website}}">
+      </label>
+
+      <label>Company:
+        <input type="text" name="content[company]" value="{{customer_message.company}}">
+      </label>
+    </div>
+    <div class='large-5 column end'>
+      <label>Message:
+        <textarea name="content[message]">{{customer_message.message}}</textarea>
+      </label>
+    </div>
+    <div class="clear-left large-offset-10 large-1">
+      <input type="submit" class='button right'>
+    </div>
+  </form>
+

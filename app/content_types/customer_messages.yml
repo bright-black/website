@@ -34,11 +34,16 @@ fields:
 
 - email: # The lowercase, underscored name of the field
     label: Email # Human readable name of the field
-    type: string
+    type: email
     required: true
 
 - company: # The lowercase, underscored name of the field
     label: Company # Human readable name of the field
+    type: string
+    required: false
+
+- website: # The lowercase, underscored name of the field
+    label: Website # Human readable name of the field
     type: string
     required: false
 
@@ -49,8 +54,9 @@ fields:
 
 - reason: # The lowercase, underscored name of the field
     label: Reason # Human readable name of the field
-    type: string
+    type: select
     required: false
+    select_options: ['Just Saying Hello', 'Requesting a Proposal', 'Job Opportunities', 'Sales']
 
 - message: # The lowercase, underscored name of the field
     label: Message # Human readable name of the field
