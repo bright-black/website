@@ -1,0 +1,9 @@
+.button {
+  background: transparent;
+  border: 1px solid $black;
+  color: $black;
+  &:hover {
+    background: $light-grey;
+    color: $black;
+  }
+}

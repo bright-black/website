@@ -1,0 +1,24 @@
+{% raw %}
+<!-- To use your snippet, just add the following code in your page template-->
+<!-- {% include work_teaser %} -->
+{% endraw %}
+<div class="large-12 column center small-panel">
+  <div class="medium-2 large-offset-1 column left-text">
+    <h2>
+      <a href="/work/{{ post._slug }}"><img src="{{ post.logo_image.url }}" alt="{{ post.title }}" class='logo'><span class="visuallyhidden">{{ post.title }}</span></a>
+    </h2>
+	</div>
+	<div class="medium-3 column left-text">
+    <div class="teaser">
+      {{ post.teaser }}
+    </div>
+    <a href="/work/{{ post._slug }}" class='button tiny'>:: View Case Study</a>
+  </div>
+  <div class="medium-5 column end">
+  {% if post.featured_image.url %}
+    <a href="/work/{{ post._slug }}">
+      <img src="{{ post.featured_image.url }}" alt="{{ post.title | escape }}"></a>
+  {% endif %}
+  </div>
+</div>
+

@@ -1,8 +1,8 @@
 ---
-title: Work
+title: Content type template
 
 # true if the page is included in the menu
-listed: true
+listed: false
 # true if the page is published
 published: true
 
@@ -16,7 +16,7 @@ published: true
 # redirect_url: "<url to a page or to a remote url>"
 
 # content type that this page is templatizing
-# content_type: "<slug of one of the content types>"
+content_type: work
 
 # editable_elements:
 #   'some_block/some_slug': "<text>"
@@ -25,19 +25,15 @@ published: true
 {% extends parent %}
 
 {% block main %}
-<section>
-  <div class="row expanded hero">
-    <div class="large-12 small-panel columns center">
-      {% editable_text 'work_intro', rows: 20 %}
-        <h1>Our Selected Work</h1>
-      {% endeditable_text %}
-    </div>
-    <div class="row expanded hero">
-      {% for post in contents.work %}
-        {% include work_teaser, post: post %}
-      {% endfor %}
-    </div>
-  </div>
-</section>
 
+<div class="large-panel small-12 column center work-header" style='background: transparent url(/{{work.enviromental_image.url }}) no-repeat top left; background-size: fill;'>
+    <img src="/{{ work.logo_image.url }}"  alt="{{ work.company }}" class='logo' >
+</div>
+<div class="row">
+  <div class="large-10 large-offset-1 small-panel column">
+    <h1>{{ work.title }}</h1>
+
+    {{ work.body }}
+  </div>
+</div>
 {% endblock %}

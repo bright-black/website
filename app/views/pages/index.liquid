@@ -30,12 +30,12 @@ published: true
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-  <body>
-    <div class='contain-to-grid sticky'>
-    <nav class="top-bar" data-topbar role="navigation" data-options='sticky_on: large'>
+  <body class='{{ page.handle | handleize }}'>
+    <div class='contain-to-grid sticky bg-black'>
+    <nav class="top-bar bg-black" data-topbar role="navigation" data-options='sticky_on: large'>
       <ul class="title-area">
         <li class="name">
-          <h1><a href="/">Bright Black</a></h1>
+          <h1><a href="/">:: Bright Black</a></h1>
         </li>
          <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
         <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
@@ -43,7 +43,7 @@ published: true
 
       <section class="top-bar-section">
         <!-- Right Nav Section -->
-        <ul class="right">
+        <ul class="right bg-black">
           {% nav "site", no_wrapper: true, active_class: "active" %}
         </ul>
 
@@ -51,7 +51,7 @@ published: true
     </nav>
     </div>
     <div class='bg-black center header-site large-12' id="branding">
-      <h1>Bright Black</h1>
+      <h1><a href="/">Bright Black</a></h1>
       <ul class="center">
         {% nav 'site', no_wrapper: true, active_class: 'active' %}
       </ul>
@@ -64,33 +64,15 @@ published: true
           <div class="large-12 columns center">
             <h1>Intelligent <a href="/design">Design</a> and <a href="/development">Development</a> solutions to grow your product!</h1>
             <p>We help you understand, design and build simple appropriate technology solutions.</p>
-            <a href="#contact" class='button'>Let's Start Working Together &rsaquo;&rsaquo;</a>
+            <a href="#contact" class='button'>:: Let's Start Working Together</a>
           </section>
           <section class='expanded row panel small-panel'>
-            <div class="large-11 columns center">
-              <h1>Our Work.</h1>
-              <p class='large-offset-1 large-11 end'>We have experience working with large and small companies supporting new project and growing existing offering. We also run some products of our own.</p>
+            <div class="large-12 columns center">
+              <h1>Recent Work.</h1>
+              <p class='large-offset-1 large-10 end'>We have experience working with large and small companies supporting new project and growing existing offering. We also run some products of our own.</p>
               {% for post in contents.work limit: 1 %}
-                <div class="large-12 column center small-panel">
-                  <div class="large-5 large-offset-1 column left-text">
-                    <h2>
-                      <a href="/work/{{ post._slug }}">{{ post.title }}</a>
-                    </h2>
-
-                    <div class="teaser">
-                      {{ post.teaser }}
-                    </div>
-                    <a href="/work/{{ post._slug }}" class='button'>View Case Study &rsaquo;&rsaquo;</a>
-                  </div>
-                  <div class="large-5 column">
-                  {% if post.featured_image.url %}
-                    <a href="/work/{{ post._slug }}">
-                      <img src="{{ post.featured_image.url | resize: '400x200#' }}" alt="{{ post.title | escape }}"></a>
-                  {% endif %}
-                  </div>
-                </div>
+                {% include work_teaser, post: post %}
               {% endfor %}
-              <a href="/work" class='right button'>View All Work &rsaquo;&rsaquo;</a>
             </div>
           </section>
 
@@ -98,19 +80,19 @@ published: true
             <div class="large-12 columns center">
               <h1>What we do?</h1>
 
-              <div class="large-5 large-offset-1 columns">
+              <div class="large-5 large-offset-1 columns small-panel">
                 <h3>Discovery</h3>
                 <p class='left-text'>You cannot improve a situation you do not understand. We believe that any serious improvements to a product requires a great amount of empathy for the problem, users and goals. We utilize job shadowing, design thinking, user interviews and rapid prototyping to come up with sensible improvements and road maps for your product.</p>
               </div>
-              <div class="large-5 columns end">
+              <div class="large-5 columns end small-panel">
                 <h3>UI/UX</h3>
                 <p class='left-text'>Great design makes interfaces disappear. We believe that the design of the site should aim to help make processes easier and faster. We iterate on our designs until the solutions offers a intuitive, useful experience that meets your goals.
               </div>
-              <div class="large-5 large-offset-1 columns clear-left">
+              <div class="large-5 large-offset-1 columns clear-left small-panel">
                 <h3>Development</h3>
                 <p class='left-text'>We believe in TDD, Agile and the right tool for the job. We are polyglot programmers offering many avenues to implement your solutionin a practicle maintainable fashion. Often we turn to Ruby, Rails, Postgres, Angular and Python but we have other tools in our box as well.</p>
               </div>
-              <div class="large-5 columns end">
+              <div class="large-5 columns end small-panel">
                 <h3>Branding</h3>
                 <p class='left-text'>We have a unique strength in branding, our sister company Pfaltzgraphic offers excellent branding capabilities. From style guides to logos we have worked with brands large and small alike and can provide stunning branding packages.</P>
               </div>
@@ -122,18 +104,28 @@ published: true
           <div class="large-12 columns center">
             <h1>Who are we?</h1>
             <p>We are a small team of developers and designers who care about moving web presences forward.</p>
+						{% for member in contents.team_member %}
+              <div class="large-5 columns {% cycle 'large-offset-1','end' %} small-panel">
+                <h2>
+                  {{ member.name }}
+                </h2>
+                <div class="description">
+                  {{ member.description }}
+                </div>
+              </div>
+						{% endfor %}
           </div>
         </div>
       </section>
     {% endblock %}
-    <footer class='expanded row bg-black'>
-      <div class="large-12 columns small-panel">
+    <footer class='row expanded bg-grey'>
+      <div class="small-panel">
         <a name="contact" id='contact'></a>
         {% include contact_form %}
       </div>
 
       <div class="large-12 columns">
-        <p class='center'>
+        <p class='center text-white'>
         All content © Bright Black, {{ 'now' | date: '%Y' }}
         </p>
       </div>

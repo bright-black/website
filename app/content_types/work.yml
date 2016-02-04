@@ -64,6 +64,19 @@ fields:
     required: false
     localized: false
 
+- enviromental_image: # The lowercase, underscored name of the field
+    label: Enviromental image # Human readable name of the field
+    type: file
+    required: false
+    localized: false
+
+- logo_image: # The lowercase, underscored name of the field
+    label: Logo # Human readable name of the field
+    type: file
+    required: false
+    localized: false
+
+
 - body: # The lowercase, underscored name of the field
     label: Body # Human readable name of the field
     type: text

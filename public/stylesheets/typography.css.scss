@@ -1,7 +1,177 @@
+// Vertical Rhythm ----------------------------------------------------------
+$base-font-size: 17px;
+$base-line-height: 23px;
+
+$x-tiny-font-size: 12px;
+$tiny-font-size: 14px;
+$small-font-size: 17px;
+$base-font-size: $base-font-size;
+$medium-font-size: 20px;
+$medium2-font-size: 22px;
+$large-font-size: 25px;
+$xlarge-font-size: 26px;
+$xxlarge-font-size: 38px;
+
+@mixin adjust-font-size-to($size) {
+      font-size: 0px + $size;
+      font-size: 0rem + $size / $base-font-size;
+      line-height: ceil($size / $base-line-height) * ($base-line-height / $size);
+      margin-bottom: 0px + $base-line-height;
+      margin-bottom: ($base-line-height / $base-font-size) +rem;
+}
+
+@mixin type-scale($size) {
+
+ @if $size == "x-tiny" {
+  @include adjust-font-size-to($x-tiny-font-size);
+ }
+ @if $size == "tiny" {
+  @include adjust-font-size-to($tiny-font-size);
+ }
+ @if $size == "small" {
+  @include adjust-font-size-to($small-font-size);
+ }
+ @if $size == "base" {
+  @include adjust-font-size-to($base-font-size);
+ }
+ @if $size == "medium" {
+  @include adjust-font-size-to($medium-font-size);
+ }
+  @if $size == "medium2" {
+  @include adjust-font-size-to($medium2-font-size);
+ }
+ @if $size == "large" {
+  @include adjust-font-size-to($large-font-size);
+ }
+ @if $size == "xlarge" {
+  @include adjust-font-size-to($xlarge-font-size);
+ }
+ @if $size == "xxlarge" {
+  @include adjust-font-size-to($xxlarge-font-size);
+ }
+
+}
+
+/*Body styles---------------------------------------*/
+html, html a {
+    -webkit-font-smoothing: antialiased;
+    //text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+}
+
+body {
+  color: $grey;
+  background-color: white;
+}
+
+// Typography ----------------------------------------------------------------------
+.tiny {
+  @include type-scale(tiny);
+}
+
+.small {
+  @include type-scale(small);
+}
+
+.base {
+  @include type-scale(base);
+}
+
+.medium {
+  @include type-scale(medium);
+}
+
+.medium2 {
+  @include type-scale(medium2);
+}
+
+.large {
+  @include type-scale(large);
+}
+
+.xlarge {
+  @include type-scale(xlarge);
+}
+
+.xxlarge {
+  @include type-scale(xxlarge);
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.titlecase {
+  text-transform: capitalize;
+}
+
+.bold {
+  font-weight: 500;
+}
+
+p {
+  @include type-scale(base);
+  margin-bottom: 15px;
+  &.small-trailer {
+    margin-bottom: 5px;
+  }
+}
+
+a {
+  text-decoration: none;
+  outline: 0;
+  &:hover, &:focus, &:active, &:visited {
+    text-decoration: none;
+    color: $black;
+  }
+}
+
+
+a img {
+  border-style: none;
+}
+
+ul, ol {
+  @include type-scale(base);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: $grey;
+  font-weight: normal;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+h1 {
+  @include type-scale(xlarge);
+  text-transform: uppercase;
+}
+
+h2 {
+  @include type-scale(large);
+}
+
+h3 {
+  @include type-scale(medium2);
+}
+
+h4 {
+  @include type-scale(medium);
+}
+
+h4 {
+  @include type-scale(base);
+}
 .justify-text {
  text-align: justify;
 }
 
 .left-text {
   text-align: left;
+}
+
+a {
+  color: $black;
+  &:hover {
+    color: $black;
+  }
 }

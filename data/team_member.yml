@@ -1,0 +1,28 @@
+- "Sample 1":
+    description: "Libero dolorem natus quod dolore cum voluptatum. Quas autem tempore eligendi architecto. Enim provident rerum quod occaecati nulla ullam omnis."
+    image: null # Path to a file in the public/samples folder or to a remote and external file.
+    twitter: "Quos est sed necessitatibus saepe ullam."
+    github: "Quasi id sint dignissimos doloremque est et voluptas molestiae."
+    dribbble: "Deleniti perspiciatis explicabo delectus et et similique autem."
+
+- "Sample 2":
+    description: "Delectus harum commodi velit qui voluptate fugiat in. Inventore ullam et sunt magnam. Quo et dolores et autem sequi sint. Autem magnam quia sed aut. Corrupti aut dolorum nihil."
+    image: null # Path to a file in the public/samples folder or to a remote and external file.
+    twitter: "Expedita ex et libero aut est praesentium velit."
+    github: "Est impedit et ut dolore est expedita."
+    dribbble: "Aut laborum sed dolores fugit."
+
+- "Sample 3":
+    description: "Amet molestiae neque omnis architecto quis. Inventore aut corporis rerum omnis. Voluptatibus qui ducimus vel ad consequatur. Expedita sint voluptate omnis est dolore esse aperiam nemo. Odit aut in officiis repellat."
+    image: null # Path to a file in the public/samples folder or to a remote and external file.
+    twitter: "Ut rerum et voluptas nobis."
+    github: "Ut culpa et quasi aut et vel nihil."
+    dribbble: "Sapiente ratione recusandae dolores laudantium."
+
+- "Sample 4":
+    description: "Voluptatem eius ut iure. Corrupti quidem eligendi maxime esse adipisci pariatur dolorem. Eveniet exercitationem iure aut voluptatum impedit ea. Distinctio architecto ducimus possimus. Molestiae beatae aliquid perspiciatis qui soluta."
+    image: null # Path to a file in the public/samples folder or to a remote and external file.
+    twitter: "Sed facilis molestias odio nostrum quia."
+    github: "Occaecati nam totam et consequuntur nulla qui."
+    dribbble: "Cupiditate et facilis libero necessitatibus."
+
