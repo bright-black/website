@@ -35,7 +35,7 @@ published: true
     <nav class="top-bar bg-black" data-topbar role="navigation" data-options='sticky_on: large'>
       <ul class="title-area">
         <li class="name">
-          <h1><a href="/">:: Bright Black</a></h1>
+          <h1 class='bold'><a href="/" class='bold'>:: BrightBlack</a></h1>
         </li>
          <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
         <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
@@ -51,8 +51,8 @@ published: true
     </nav>
     </div>
     <div class='bg-black center header-site large-12' id="branding">
-      <h1><a href="/">Bright Black</a></h1>
-      <ul class="center">
+      <h1 class='logo'><a href="/">BrightBlack</a></h1>
+      <ul class="center nav">
         {% nav 'site', no_wrapper: true, active_class: 'active' %}
       </ul>
     </div>
@@ -60,7 +60,7 @@ published: true
 
     {% block 'main' %}
 
-        <section class='row expanded panel hero vertical-align large-panel'>
+        <section class='row expanded panel vertical-align large-panel'>
           <div class="large-12 columns center">
             <h1>Intelligent <a href="/design">Design</a> and <a href="/development">Development</a> solutions to grow your product!</h1>
             <p>We help you understand, design and build simple appropriate technology solutions.</p>
@@ -76,23 +76,31 @@ published: true
             </div>
           </section>
 
-          <section class='row expanded panel hero small-panel'>
+          <section class='row expanded panel small-panel'>
             <div class="large-12 columns center">
               <h1>What we do?</h1>
 
-              <div class="large-5 large-offset-1 columns small-panel">
+              <div class="large-5 large-offset-1 columns small-panel callout">
+
+                <img src="{{ 'design-thinking.jpeg' | theme_image_url |  resize: '220x100#' }}" alt="Branding">
                 <h3>Discovery</h3>
                 <p class='left-text'>You cannot improve a situation you do not understand. We believe that any serious improvements to a product requires a great amount of empathy for the problem, users and goals. We utilize job shadowing, design thinking, user interviews and rapid prototyping to come up with sensible improvements and road maps for your product.</p>
               </div>
-              <div class="large-5 columns end small-panel">
+              <div class="large-5 columns end small-panel callout">
+
+                <img src="{{ 'ux.jpeg' | theme_image_url |  resize: '100x100#' }}" alt="UI/UX">
                 <h3>UI/UX</h3>
                 <p class='left-text'>Great design makes interfaces disappear. We believe that the design of the site should aim to help make processes easier and faster. We iterate on our designs until the solutions offers a intuitive, useful experience that meets your goals.
               </div>
-              <div class="large-5 large-offset-1 columns clear-left small-panel">
+              <div class="large-5 large-offset-1 columns clear-left small-panel callout">
+
+                <img src="{{ 'terminal.png' | theme_image_url |  resize: '100x100#' }}" alt="Development">
                 <h3>Development</h3>
                 <p class='left-text'>We believe in TDD, Agile and the right tool for the job. We are polyglot programmers offering many avenues to implement your solutionin a practicle maintainable fashion. Often we turn to Ruby, Rails, Postgres, Angular and Python but we have other tools in our box as well.</p>
               </div>
-              <div class="large-5 columns end small-panel">
+              <div class="large-5 columns end small-panel callout">
+
+                <img src="{{ 'branding.jpeg' | theme_image_url |  resize: '100x100#' }}" alt="Branding">
                 <h3>Branding</h3>
                 <p class='left-text'>We have a unique strength in branding, our sister company Pfaltzgraphic offers excellent branding capabilities. From style guides to logos we have worked with brands large and small alike and can provide stunning branding packages.</P>
               </div>
@@ -100,18 +108,18 @@ published: true
         </section>
 
 
-        <section class='row expanded panel hero small-panel'>
+        <section class='row expanded panel small-panel'>
           <div class="large-12 columns center">
             <h1>Who are we?</h1>
             <p>We are a small team of developers and designers who care about moving web presences forward.</p>
 						{% for member in contents.team_member %}
-              <div class="large-5 columns {% cycle 'large-offset-1','end' %} small-panel">
+              <div class="large-5 columns {% cycle 'large-offset-1','end' %} small-panel callout">
                 <h2>
                   {{ member.name }}
                 </h2>
-                <div class="description">
+                <p class="description">
                   {{ member.description }}
-                </div>
+                </p>
               </div>
 						{% endfor %}
           </div>

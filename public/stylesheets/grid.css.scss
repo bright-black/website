@@ -1,3 +1,16 @@
+$full-padding: 10%;
+$half-padding: 5%;
+$tight-padding: 3%;
+
+.large-panel {
+  padding-top: $full-padding;
+  padding-bottom: $full-padding;
+}
+
+.small-panel {
+  padding-top: $half-padding;
+  padding-bottom: $half-padding;
+}
 .expanded {
    width: 100%;
    margin-left: auto;

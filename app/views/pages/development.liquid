@@ -10,7 +10,7 @@ published: true
 # is_layout: true
 
 # position among sibling pages
-# position: 1
+position: 1
 
 # sets a redirection to the given url (301)
 # redirect_url: "<url to a page or to a remote url>"
@@ -26,28 +26,44 @@ published: true
 
 {% block main %}
 <section>
-    <div class="row expanded hero">
-      <div class="large-12 columns center">
+    <div class="row expanded">
+      <div class="large-12 columns center large-panel">
         {% editable_text "development_intro", rows: 20 %}
           <h1>How can we help you?</h1>
 
           <p>Your goals and needs are unique, we work with you to try to understand these needs and bring in the appropriate resources to help you attain your goals.</p>
-        <!--
-          <ul class="inline center">
-            <li><a href="">Development</a> //</li>
-            <li><a href="">Design</a> //</li>
-            <li><a href="">Discovery</a></li>
-          </ul>
-        -->
         {% endeditable_text %}
       </div>
     </div>
-    <div class="row expanded hero">
+    <div class="row expanded small-panel">
       <div class="large-12 columns center">
         {% editable_text "development_offerings", rows: 20 %}
-        <h3>Web Application Development</h3>
-        <p>Ruby, Python, Javascript, AngularJS, SASS, PHP, Postgres, MySQL, Mongo Golang, we've got you covered. Every project requires the right tool. Bright Black will work with you to focus on sane technology solutions to your business problems.</p>
-        <p>We develop our code using test driven development, continous deployment, agile and code linters to ensure we deliver you code for the long haul.</p>
+        <h3>Technologies</h3>
+        <div class="large-5 large-offset-1 columns small-panel callout">
+          <img src="{{ 'ruby-icon.png' | theme_image_url |  resize: '100x100#' }}" alt="Ruby">
+          <h3>Ruby</h3>
+          <p>We <span class="text-red">&#9825;</span> Ruby, from low level workers handling specific large tasks with huge data sets to service oriented Rails applications we have a history with Ruby.</p>
+        </div>
+        <div class="large-5 columns small-panel end callout">
+          <img src="{{ 'angular.png' | theme_image_url |  resize: '100x100#' }}" alt="AngularJS">
+
+          <h3>Angular JS</h3>
+          <p>NG-Awesome, we work with Angular to simplify complex front end project and provide amazing user experiences.</p>
+        </div>
+        <div class="large-5 large-offset-1 columns small-panel clear-left callout">
+
+          <img src="{{ 'css3_logo.png' | theme_image_url |  resize: '150x100#' }}" alt="Front End Dev">
+          <h3>Front End Development</h3>
+          <p>
+            We believe in web standards, responsive desigan, microformats and clean semantic markup.
+          </p>
+        </div>
+        <div class="large-5 columns small-panel end callout">
+
+          <img src="{{ 'Python-logo.svg.png' | theme_image_url |  resize: '100x100#' }}" alt="Python">
+          <h3>Python</h3>
+          <p>Python is a beautiful powerful language, we speak parsel tongue.</p>
+        </div>
         {% endeditable_text %}
       </div>
     </div>
@@ -55,8 +71,34 @@ published: true
     <div class="row expanded hero">
       <div class="large-12 columns center">
         {% editable_text "development_architecture", rows: 20 %}
-        <h3>Software Architecture</h3>
-        <p>Facing a challenging architecture issue? We undestand the difficulties associated with scaling a code base and are here to help you get that tangled mess of code under control.</p>
+        <h3>Code as Craft</h3>
+        <p>We take pride in our work and try to always leave things better then we found them.</p>
+        <div class="large-5 columns small-panel large-offset-1 callout">
+
+          <img src="{{ 'tdd.png' | theme_image_url |  resize: '110x100#' }}" alt="Red Green Refactor">
+          <h3>TDD</h3>
+          <p>We follow test driven development principles. This helps us write the best code possible and ensure that future developments do not intefere with legacy implementations.</p>
+        </div>
+        <div class="large-5 columns small-panel end callout">
+
+          <img src="{{ 'octocat.png' | theme_image_url |  resize: '100x100#' }}" alt="Octocat">
+
+          <h3>Code Reviews</h3>
+          <p>We don't like pushing code that has not been reviewed. We setup linters and automated workflows to ensure that code follows stylic best practices. Then we review our work or have your team review our work to ensure it is clearly written and as error free as possible.</p>
+        </div>
+        <div class="large-5 columns small-panel large-offset-1 callout">
+
+          <img src="{{ 'open_source.png' | theme_image_url |  resize: '100x100#' }}" alt="Open Source">
+          <h3>Open Source</h3>
+          <p>We keep our tools sharp by using and contributting to open source projects. The crowd ussually knows best.</p>
+        </div>
+        <div class="large-5 columns small-panel end callout">
+
+          <img src="{{ 'jenkinslogo.png' | theme_image_url |  resize: '70x100#' }}" alt="Continous Integration">
+
+          <h3>Continous Integration</h3>
+          <p>We prefer to work in an agile fashion when possible, we have experience setting up continous integration work flow helping you iterate quickly while maintianing good test coverage and code practices.</p>
+        </div>
         {% endeditable_text %}
       </div>
     </div>

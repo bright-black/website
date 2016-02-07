@@ -10,7 +10,7 @@ published: true
 # is_layout: true
 
 # position among sibling pages
-# position: 1
+position: 2
 
 # sets a redirection to the given url (301)
 # redirect_url: "<url to a page or to a remote url>"
@@ -26,44 +26,49 @@ published: true
 
 {% block main %}
   <section>
-    <div class="row expanded hero">
+    <div class="row expanded large-panel">
       <div class="large-12 columns center">
         {% editable_text "designing_brands", rows: 20 %}
-        <h1>Designing solutions and brands.</h1>
+        <h1>Designing better solutions and brands.</h1>
         <p>A users notion of a digital product begins with the interface. Ensuring that you are making a task as simple as possible is hard. You need a team of designers who understand your domain and spend the time to ensure their designs actually work. Bright Black devotes time to discovery and talks to you and your users throught our design process.</p>
         {% endeditable_text %}
       </div>
     </div>
     <div class="row expanded hero">
       <div class="large-12 columns center">
+        <h2>Our Design Offerings</h2>
 
+      </div>
+      <div class="large-5 large-offset-1 columns center callout small-panel">
         {% editable_text "responsive", rows: 20 %}
+
+          <img src="{{ 'responsive-design.jpg' | theme_image_url |  resize: '160x100#' }}" alt="Responsive design">
         <h3>Responsive Design</h3>
-        <p>The web is everywhere, make sure your website is capable of being in all these places. We work in responsive design because we believe the best device is the one your user is on.</p>
+        <p class='left-text'>The web is everywhere, make sure your website is capable of being in all these places. We work in responsive design because we believe the best device is the one your user is on.</p>
         {% endeditable_text %}
       </div>
-    </div>
-    <div class="row expanded hero">
-      <div class="large-12 columns center">
+      <div class="large-5 end columns center  callout small-panel">
         {% editable_text "design_thinking", rows: 20 %}
+
+          <img src="{{ 'design-thinking.jpeg' | theme_image_url |  resize: '220x100#' }}" alt="Design Thinking">
         <h3>Design Thinking</h3>
-        <p>Some times you need to look at a problem through a new lens, we can help you better understand the issues you are facing, brainstorm solutions and prototype, test, rinse and repeat.</p>
+        <p class='left-text'>Some times you need to look at a problem through a new lens, we can help you better understand the issues you are facing, brainstorm solutions and prototype, test, rinse and repeat.</p>
         {% endeditable_text %}
       </div>
-    </div>
-    <div class="row expanded hero">
-      <div class="large-12 columns center">
+      <div class="large-5 large-offset-1 columns  callout center small-panel">
         {% editable_text "design_branding", rows: 20 %}
+
+          <img src="{{ 'branding.jpeg' | theme_image_url |  resize: '100x100#' }}" alt="Branding">
         <h3>Branding</h3>
-        <p>We have experience branding some of the biggest companies in the world. Our lead designer comes from a rich branding background and we can help you understand how your brand should look.</p>
+        <p class='left-text'>We have experience branding some of the biggest companies in the world. Our lead designer comes from a rich branding background and we can help you understand how your brand should look.</p>
         {% endeditable_text %}
       </div>
-    </div>
-    <div class="row expanded hero">
-      <div class="large-12 columns center">
+      <div class="large-5 end columns center callout small-panel">
         {% editable_text "design_ui", rows: 20 %}
+
+          <img src="{{ 'ux.jpeg' | theme_image_url |  resize: '100x100#' }}" alt="Branding">
         <h3>UI Design</h3>
-        <p>If no one wants to use your application then you have bigger problems then technology can solve. Bright Black will work with you to understand how users currently use your product and how it can improve.</p>
+        <p class='left-text'>If no one wants to use your application then you have bigger problems then technology can solve. Bright Black will work with you to understand how users currently use your product and how it can improve.</p>
         {% endeditable_text %}
       </div>
     </div>

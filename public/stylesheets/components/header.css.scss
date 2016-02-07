@@ -1,7 +1,7 @@
  .header-site {
   position: relative;
   background: #000;
-  padding: 4rem 0 1.5rem;
+  padding: 4rem 0 2rem 0;
   color: #f0f0f0;
   color: rgba(255,255,255,0.8);
   border-bottom: 1px solid rgba(255,255,255,0.1);
@@ -10,13 +10,18 @@
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
 	margin-top: -44px;
-  h1 {
+  .logo {
     font-weight: bold;
+		text-transform: none;
+		margin-bottom: 0;
     &:before {
       content: ' :: ';
       color: $white;
     }
   }
+	.nav {
+		margin-bottom: 0;
+	}
   a {
     color: $white;
   }
@@ -26,4 +31,14 @@
       content: ' ::';
     }
   }
+}
+
+.top-bar .name h1 a {
+	font-weight: bold;
+  text-transform: none;
+}
+.top-bar-section {
+	.link, .link a {
+		background: $black !important;
+	}
 }
